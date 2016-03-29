@@ -17,8 +17,8 @@
     -- y : output of the system.
     -- u : control action (input to the system).
     -- e : color guassian noise (noise with non zero mean).
-    -- Asys = 1 + a_1 z^-1 + a_2 z^-2 + ... + a_na z^(-na). [denominator polynomail]
-    -- Bsys = b_0 + b_1 z^-1 + b_2 z^-2 + ... + b_nb z^(-nb). [numerator polynomail]
+    -- Asys = 1 + a_1 z^-1 + a_2 z^-2 + ... + a_na z^(-na). [denominator polynomial]
+    -- Bsys = b_0 + b_1 z^-1 + b_2 z^-2 + ... + b_nb z^(-nb). [numerator polynomial]
     -- C = 1 + c_1 z^-1 + c_2 z^-2 + ... + c_nc z^(-nc). [noise characteristics]
     -- d : delay in the system.
     A and C are monic polynomials. (in output estimation of the stochastic

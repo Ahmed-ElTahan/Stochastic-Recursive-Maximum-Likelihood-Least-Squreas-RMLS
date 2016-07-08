@@ -49,7 +49,7 @@
     An example is added to illustrate how to use the funcrtion
 %}
 
-function [ Theta_final Gz_estm] = RecursiveModifiedExtendedLeastSquares( u, y, na, nb, d, nc, Ts, lambda )
+function [ Theta_final Gz_estm] = RecursiveModifiedExtendedLeastSquares( u, y, na, nb, d, nc, Ts )
 
 nu = na + nb + nc + 1; % number of unkowns
 N = length(y); % length of the vectors
@@ -120,7 +120,7 @@ y_estm = zeros(N, 1);
         phi = Phi(j, :)'; % to get the j th row and then convert into column and that what we need in RLS not Phi
         
         % RELS algorithm
-            P{1, j} = 1/lambda*P{1, j-1} - P{1, j-1}*phi*inv(lambda+phi'*P{1, j-1}*phi)*phi'*P{1, j-1}; % Covariance Matrix
+            P{1, j} = P{1, j-1} - P{1, j-1}*phi*inv(1+phi'*P{1, j-1}*phi)*phi'*P{1, j-1}; % Covariance Matrix
             K = P{1, j}*phi; % Gain
             eps(j) = y(j) - phi'*theta{1, j-1}; % residual calculation
             theta{1, j} = theta{1, j-1} + K*(eps(j)); % estimated parameters

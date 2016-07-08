@@ -1,9 +1,8 @@
-# Stochastic-Recursive-Maximum-Likelihood-Least-Squreas-RMLS
 % This function is made by Ahmed ElTahan
 
 %{
         This function is intended to estimate the parameters of a dynamic
-        system of unknown parameters using the Recursive Maximum Likelihood Least Squares Method (RMLS).
+        system of unknown parameters using the Recursive Modified Extended Least Squares Method (RMLS).
         After an experiment, we get the inputs, the outputs of the system. 
         The experiment is operated with sample time Ts seconds. 
                                     
@@ -17,8 +16,8 @@
     -- y : output of the system.
     -- u : control action (input to the system).
     -- e : color guassian noise (noise with non zero mean).
-    -- Asys = 1 + a_1 z^-1 + a_2 z^-2 + ... + a_na z^(-na). [denominator polynomial]
-    -- Bsys = b_0 + b_1 z^-1 + b_2 z^-2 + ... + b_nb z^(-nb). [numerator polynomial]
+    -- Asys = 1 + a_1 z^-1 + a_2 z^-2 + ... + a_na z^(-na). [denominator polynomail]
+    -- Bsys = b_0 + b_1 z^-1 + b_2 z^-2 + ... + b_nb z^(-nb). [numerator polynomail]
     -- C = 1 + c_1 z^-1 + c_2 z^-2 + ... + c_nc z^(-nc). [noise characteristics]
     -- d : delay in the system.
     A and C are monic polynomials. (in output estimation of the stochastic
@@ -28,8 +27,8 @@
     Function inputs
     u : input to the system in column vector form
     y : input of the system in column vector form
-    na : order of the denominator polynomial
-    nb : order of the numerator polynomial
+    na : order of the denominator polynomail
+    nb : order of the numerator polynomail
     nc : order of the characteristics of the noise (usually <=2 for max)
     d : number represents the delay between the input and the output
     
